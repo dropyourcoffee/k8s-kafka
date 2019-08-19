@@ -1,0 +1,29 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-kafka
+  namespace: kafka
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi # 500Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-zoo
+  namespace: kafka
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi # 500Mi

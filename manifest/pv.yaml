@@ -1,0 +1,31 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-kafka
+  namespace: kafka
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/opt/appdata/kafka/data-kafka"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-zoo
+  namespace: kafka
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/opt/appdata/kafka/data-pzoo"
