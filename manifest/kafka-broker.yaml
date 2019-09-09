@@ -35,3 +35,5 @@ spec:
           persistentVolumeClaim:
             claimName: pvc-kafka
  
+      nodeSelector:
+        kubernetes.io/hostname: k8s-node03.local

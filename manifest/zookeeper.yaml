@@ -27,6 +27,8 @@ spec:
         - name: datadir
           persistentVolumeClaim:
             claimName: pvc-zoo
+      nodeSelector:
+        kubernetes.io/hostname: k8s-node03.local
 ---
 apiVersion: v1
 kind: Service
